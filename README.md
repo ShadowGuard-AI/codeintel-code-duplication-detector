@@ -1,3 +1,5 @@
+![Banner](banner.png)
+
 # codeintel-Code-Duplication-Detector
 Identifies and reports instances of duplicated code blocks within a codebase to improve maintainability and reduce potential bugs. - Focused on Tools for static code analysis, vulnerability scanning, and code quality assurance
 
