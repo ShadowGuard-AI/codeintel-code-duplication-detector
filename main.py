@@ -40,6 +40,7 @@ def find_duplicates(path, min_lines, exclude):
     """
     code_blocks = {}  # Hash: (filename, start_line, end_line)
     duplicates = []
+    unreadable = []
 
     # A single file is a valid target: os.walk on a file yields
     # nothing, which used to report no duplicates for a file that was
@@ -73,6 +74,7 @@ def find_duplicates(path, min_lines, exclude):
                     lines = f.readlines()
             except Exception as e:
                 logging.error(f"Error reading file {filepath}: {e}")
+                unreadable.append(filepath)
                 continue
 
             for i in range(len(lines) - min_lines + 1):
@@ -94,26 +96,34 @@ def find_duplicates(path, min_lines, exclude):
                         code_blocks[block_hash] = (filepath, i + 1, i + min_lines)
     except Exception as e:
         logging.error(f"An unexpected error occurred: {e}")
-        return None
+        return None, unreadable
 
-    return duplicates
+    return duplicates, unreadable
 
 
-def write_report(duplicates, report_file):
+def write_report(duplicates, report_file, unreadable=None):
     """
     Writes the duplication report to the specified file.
     """
+    unreadable = unreadable or []
     try:
         with open(report_file, 'w', encoding='utf-8') as f:
-            if not duplicates:
+            if not duplicates and not unreadable:
                 f.write("No duplicate code blocks found.\n")
                 return True
 
             f.write("Code Duplication Report:\n\n")
+            if not duplicates:
+                f.write("No duplicate code blocks were found in the files that could be read.\n\n")
             for duplicate in duplicates:
                 f.write(f"Duplicate found between:\n")
                 f.write(f"  File: {duplicate['file1']}, Lines: {duplicate['start_line1']}-{duplicate['end_line1']}\n")
                 f.write(f"  File: {duplicate['file2']}, Lines: {duplicate['start_line2']}-{duplicate['end_line2']}\n")
+                f.write("\n")
+            if unreadable:
+                f.write("Files that could not be read:\n")
+                for filepath in unreadable:
+                    f.write(f"  File: {filepath}\n")
                 f.write("\n")
 
         logging.info(f"Report written to: {report_file}")
@@ -139,12 +149,16 @@ def main():
         sys.exit(1)
 
     try:
-        duplicates = find_duplicates(args.path, args.min_lines, args.exclude)
+        duplicates, unreadable = find_duplicates(args.path, args.min_lines, args.exclude)
         if duplicates is None:
             logging.error("Failed to find duplicates due to an error.")
             sys.exit(1)
 
-        if not write_report(duplicates, args.report_file):
+        if not write_report(duplicates, args.report_file, unreadable):
+            sys.exit(1)
+
+        if unreadable:
+            logging.error(f"Files that could not be read: {', '.join(unreadable)}")
             sys.exit(1)
 
     except Exception as e:
