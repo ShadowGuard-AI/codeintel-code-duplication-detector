@@ -78,6 +78,10 @@ def find_duplicates(path, min_lines, exclude):
                 continue
 
             for i in range(len(lines) - min_lines + 1):
+                # I hash the lines exactly as read, whitespace and comments
+                # included. Two blocks that do the same thing with different
+                # spacing never match here, and I prefer that miss over guessing
+                # that near copies count as duplicates.
                 block = "".join(lines[i:i + min_lines])
                 block_hash = calculate_hash(block)
 
@@ -93,6 +97,9 @@ def find_duplicates(path, min_lines, exclude):
                             "end_line2": i + min_lines
                         })
                     else:
+                        # I keep only the first sighting. Every later copy is reported
+                        # against that first file, so a block in five files prints four
+                        # pairs that all name the same first location.
                         code_blocks[block_hash] = (filepath, i + 1, i + min_lines)
     except Exception as e:
         logging.error(f"An unexpected error occurred: {e}")
@@ -154,6 +161,9 @@ def main():
             logging.error("Failed to find duplicates due to an error.")
             sys.exit(1)
 
+        # The default report path is a plain file name, so it lands in
+        # whatever directory the caller ran from, not next to the code
+        # that was scanned. I leave that choice to the caller.
         if not write_report(duplicates, args.report_file, unreadable):
             sys.exit(1)
 
