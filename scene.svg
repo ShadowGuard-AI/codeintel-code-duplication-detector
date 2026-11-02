@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" role="img" aria-label="Water in three depths: light shafts in the upper water thin a fraction at long intervals, the scattering layer rises very slowly as a band and pauses, and two lanternfish at the lower edge hold station with one drifting a body length toward the other and settling">
+<rect x="0" y="0" width="1200" height="300" fill="#06121f"/>
+<g fill="#d2c87a" opacity="0.14"><polygon points="200,0 260,0 340,220 240,220"><animate attributeName="opacity" values="0.14;0.07;0.14;0.14" keyTimes="0;0.3;0.6;1" dur="28s" repeatCount="indefinite"/></polygon><polygon points="520,0 580,0 660,220 560,220"/></g>
+<g fill="#a8c6c0"><animateTransform attributeName="transform" type="translate" values="0 14;0 -16;0 -16;0 -26;0 14" keyTimes="0;0.35;0.55;0.8;1" dur="36s" repeatCount="indefinite"/>
+<g id="k"><polygon points="0,0 16,3 0,7 5,3"/></g>
+<use href="#k" x="180" y="140"/><use href="#k" x="300" y="165"/><use href="#k" x="430" y="138"/><use href="#k" x="560" y="168"/><use href="#k" x="690" y="142"/><use href="#k" x="820" y="164"/><use href="#k" x="950" y="140"/><use href="#k" x="240" y="190"/><use href="#k" x="500" y="192"/><use href="#k" x="760" y="190"/><use href="#k" x="1020" y="168"/></g>
+<g><animateTransform attributeName="transform" type="translate" values="0 0;-52 0;-52 0;0 0" keyTimes="0;0.3;0.7;1" dur="24s" repeatCount="indefinite"/><polygon points="560,262 640,248 672,262 640,276" fill="#183e4e"/><circle cx="580" cy="252" r="6" fill="#ee6c7d"/></g>
+<polygon points="300,262 380,248 412,262 380,276" fill="#183e4e"/><circle cx="320" cy="252" r="6" fill="#ee6c7d"/>
+</svg>
