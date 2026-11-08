@@ -1,13 +1,9 @@
-![Deep water with no lettering: two lanternfish low in frame, a broad band of small fish and krill, a mooring line and pressure gauge at far right](intro-banner.png)
-
 
 # codeintel-Code-Duplication-Detector
 
 Depth marker treatment: every heading is a marker tied on a sounding line, in Barriecito in dark blue on pale turquoise, ruled below.
 
-![Two lanternfish on dark water, one fainter twin behind the first, each lure lit, the heading plate](logo.png)
-
-![Open water at dusk depth with the scattering layer as a broad band, a foreground pair of lanternfish, and the title on a depth marker tag hung on the sounding line at the left](banner.png)
+![A stereotype plate store with curved lead printing plates racked edge on in timber slots, the storekeeper comparing a plate in his hands with its twin standing on the bench, a blue pencil resting beside a stack of newsprint](banner.png)
 
 ![Water in three depths: light shafts thin at long intervals, the scattering layer rises slowly as a band, and two lanternfish hold station with one drifting toward the other and settling](scene.svg)
 

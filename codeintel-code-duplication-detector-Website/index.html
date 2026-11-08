@@ -3,23 +3,91 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>codeintel-code-duplication-detector: Deep Scattering Layer at Dusk</title>
-<meta name="description" content="A sounding line let down in one straight drop: a multitude inspected until the shapes that occur twice stand out.">
-<style>@font-face{font-family:'Barriecito';src:url('fonts/Barriecito.ttf') format('truetype');}@font-face{font-family:'Archivo';src:url('fonts/Archivo.ttf') format('truetype');}:root{--sand:#e9d8a6;--pale:#cfe8e2;--pink:#ee6c7d;--ink:#10181c}*{box-sizing:border-box}body{margin:0;background:#06121f;color:var(--ink);font-family:'Archivo',sans-serif;line-height:1.65;border-left:6px solid var(--pink)}h1,h2,h3{font-family:'Barriecito',sans-serif;color:#8a6d2f}h1{color:var(--sand)}.heroimg{width:100%;height:52vh;object-fit:cover;display:block}.in,main,footer{max-width:1000px;margin:0 auto;padding:1rem 5vw 2rem}.logo{width:230px}.btn{display:inline-block;text-decoration:none;font-family:'Barriecito',sans-serif;color:var(--sand);background:rgba(42,80,90,.55);border:2px solid #7a5c1e;border-radius:46% 54% 52% 48%/58% 60% 40% 42%;box-shadow:inset 0 0 0 2px #2a9d8f;padding:.7rem 1.2rem;margin:.3rem;transition:background .15s}.btn:hover{background:rgba(90,130,110,.8)}.btn:active{background:#0d2430}.btn:focus-visible{outline:4px solid var(--pink);outline-offset:4px}nav{display:flex;gap:.6rem;flex-wrap:wrap;margin:1rem 0}a{color:#8a6d2f}a::before{content:'';display:inline-block;width:16px;height:16px;border:2px solid #2a9d8f;border-radius:50%;margin-right:.5em;vertical-align:-2px}.panel{background:var(--pale);border-top:6px solid #9db8b0;padding:.4rem 1.5rem 1.6rem;margin:1.6rem 0}.panel:first-child::after{content:'';display:block;width:40px;height:22px;border:2px solid #183e4e;border-radius:50%;margin-top:.6rem}pre{background:#0d2430;color:var(--pale);padding:1rem;overflow-x:auto}.big{font-size:1.3rem}.div{height:12px;border-top:3px solid #2a9d8f;border-radius:50%;margin:1.4rem 0}.callout{background:#e6f0ec;border-left:8px solid var(--pink);padding:.2rem 1.2rem 1rem;margin:1.2rem 0}.entry{display:flex;gap:1rem;padding:.5rem 0;border-bottom:1px solid rgba(16,24,28,.25)}.entry b{font-family:'Barriecito',sans-serif;min-width:70px}footer,header .in p{color:var(--pale)}</style>
+<title>codeintel-code-duplication-detector: The Plate Store</title>
+<style>
+@font-face { font-family: "Emblema One"; src: url("fonts/EmblemaOne-400.woff2") format("woff2"); font-weight: 400; }
+@font-face { font-family: "Vazirmatn"; src: url("fonts/Vazirmatn-400.woff2") format("woff2"); font-weight: 400; }
+@font-face { font-family: "Vazirmatn"; src: url("fonts/Vazirmatn-700.woff2") format("woff2"); font-weight: 700; }
+:root {
+  --paper: #f7f5f0; --cream: #eceae2; --ink: #26282c; --soft: #5d6066;
+  --accent: #33509e; --deep: #4a4438; --line: #d6d2c6; --card: #ffffff;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--cream); color: var(--ink); font-family: "Vazirmatn", sans-serif; line-height: 1.55; }
+.wrap { max-width: 960px; margin: 0 auto; padding: 0 20px 64px; }
+header.hero { text-align: center; padding: 52px 0 8px; }
+h1, h2 { font-family: "Emblema One", sans-serif; line-height: 1.18; font-weight: 400; }
+h1 { font-size: clamp(25px, 4.6vw, 40px); margin: 10px 0 6px; }
+.tagline { color: var(--soft); font-size: 19px; margin: 0 auto; max-width: 700px; }
+.btns { margin: 22px 0 6px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+a.btn { font-family: "Emblema One", sans-serif; text-decoration: none; padding: 11px 22px; border-radius: 999px; border: 2px solid var(--accent); color: var(--accent); background: transparent; font-size: 15px; }
+a.btn.solid { background: var(--accent); border-color: var(--accent); color: #fff; }
+figure { margin: 30px 0; }
+figure img { width: 100%; border-radius: 10px; display: block; box-shadow: 0 8px 28px rgba(30,30,36,.2); }
+figcaption { color: var(--soft); font-size: 15px; text-align: center; margin-top: 9px; }
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin: 34px 0; }
+.fact { background: var(--card); border: 1px solid var(--line); border-top: 5px solid var(--accent); border-radius: 8px; padding: 14px 16px; }
+.fact b { display: block; font-family: "Emblema One", sans-serif; font-size: 14px; letter-spacing: .03em; text-transform: uppercase; color: var(--accent); margin-bottom: 4px; }
+section { margin: 38px 0; }
+h2 { font-size: 26px; margin: 0 0 12px; border-bottom: 2px solid var(--line); padding-bottom: 7px; }
+code, pre { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; }
+pre { background: #1d2126; color: #e9ecf2; padding: 15px 18px; border-radius: 8px; overflow-x: auto; font-size: 14.5px; }
+table { border-collapse: collapse; width: 100%; background: var(--card); }
+th, td { border: 1px solid var(--line); padding: 9px 12px; text-align: left; vertical-align: top; }
+th { font-family: "Emblema One", sans-serif; background: var(--cream); font-size: 15px; }
+.hold { background: #f2f0e8; border: 1px solid #d8d2bd; border-left: 6px solid var(--accent); border-radius: 8px; padding: 16px 20px; }
+.hold h2 { border: none; padding: 0; }
+.hold ul { margin: 8px 0 4px; padding-left: 20px; }
+footer { margin-top: 52px; border-top: 2px solid var(--line); padding-top: 16px; color: var(--soft); font-size: 14.5px; text-align: center; }
+</style>
 </head>
 <body>
+<div class="wrap">
 <header class="hero">
-<img class="heroimg" src="assets/intro-banner.png" alt="Deep water with no lettering: two lanternfish low in frame, a broad band of small fish and krill, a mooring line and pressure gauge at far right">
-<div class="in">
-<img class="logo" src="assets/logo.png" alt="Two lanternfish on dark water, one fainter twin behind the first, each lure lit coral pink, and the name in sand below">
-<h1>codeintel-code-duplication-detector</h1>
-<p>A sounding line let down in one straight drop: a multitude inspected until the shapes that occur twice stand out.</p>
-<nav><a class="btn" href="#s0">Find the Duplicates</a><a class="btn" href="#s1">Write the Report File</a><a class="btn" href="#s2">Exclude a Name</a><a class="btn" href="#s3">Show Help</a></nav>
-</div>
+  <h1>codeintel-code-duplication-detector</h1>
+  <p class="tagline">The Plate Store. A command line detector that hashes every window of lines in a Python codebase exactly as written and reports each later copy against the first plate it matches.</p>
+  <div class="btns">
+    <a class="btn solid" href="https://github.com/ShadowGuard-AI/codeintel-code-duplication-detector">The repository</a>
+    <a class="btn" href="https://github.com/ShadowGuard-AI/codeintel-code-duplication-detector/blob/main/main.py">main.py</a>
+  </div>
 </header>
-<main>
-<section class="panel" id="s0"><h2>Duplicated Blocks, Named Plainly</h2><p>codeintel-code-duplication-detector identifies and reports instances of duplicated code blocks within a codebase to improve maintainability and reduce potential bugs.</p><p>The scope stays at README size: files in a codebase that the user points the tool at. No live monitor claim and no running system claim is made here.</p></section><div class="div"></div><section class="panel" id="s1"><h2>Acquisition, One Step Only</h2><pre>git clone https://github.com/ShadowStrikeHQ/codeintel-code-duplication-detector</pre><p>Shown as one step only, mistaken organisation included. The correction route is the DEFECTS record in the README; this panel does not correct it. No directory change step, no pip install step, and no requirements file is added, because the README mentions none of them.</p></section><div class="div"></div><section class="panel" id="s2"><h2>Invocation</h2><pre class="big">./codeintel-code-duplication-detector [params]</pre><p>That is the only usage line the README gives. It names no target path argument for the codebase, and the four parameters below contain no target path either. How a codebase reaches the tool is therefore a gap in the README, stated here at the same prominence as the line itself.</p></section><div class="div"></div><section class="panel" id="s3"><h2>Four Markers on the Line</h2><div class="entry"><b>-h</b><span>Shows the help message and exits.</span></div><div class="entry"><b style="color:#c2435c">-m</b><span>Gives the minimum number of lines for a code block to be considered a duplicate.</span></div><div class="entry"><b>-r</b><span>Gives the path to the report file.</span></div><div class="entry"><b>-e</b><span>Gives a list of file or directory names to exclude from the analysis.</span></div><div class="callout"><h3>Too Short to Count</h3><p>The minimum lines setting decides which blocks are long enough to count as duplicates. The README gives no default for it.</p></div></section><div class="div"></div><section class="panel" id="s4"><h2>When a File Cannot Be Read</h2><p>If any Python file under the target cannot be read, the report still covers the files that were read, the unreadable files are named in the log and in the report, the clean no duplicates line is not printed for that run, and the run exits 1.</p><div class="callout"><h3>Unreadable Means Exit One</h3><p>All four consequences stand together here, in order, at full size.</p></div><p>Missing from the README: no default for -m, no form for the -e list, no sample report, and no example run, so a reader cannot learn those things from this page.</p><h2>Copyright</h2><pre>Copyright (c) ShadowStrikeHQ</pre><p>Exact as the README states it. The organisation fault is recorded in DEFECTS in the README, not silently corrected here.</p><p><a href="https://github.com/ShadowGuard-AI/codeintel-code-duplication-detector">The repository on GitHub</a></p></section>
-</main>
-<footer><p>Theme: Deep Scattering Layer at Dusk. Type: Barriecito for display, Archivo for reading, both SIL Open Font License 1.1. The lettering reference Retro Block was reference only and is not embedded.</p></footer>
+<figure>
+  <img src="assets/banner.png" alt="A stereotype plate store with curved lead printing plates racked edge on in timber slots, the storekeeper comparing a plate in his hands with its twin standing on the bench, a blue pencil resting beside a stack of newsprint">
+  <figcaption>The plate store: every copy is matched against the first of its kind.</figcaption>
+</figure>
+
+<div class="facts">
+  <div class="fact"><b>Exact windows</b>Windows of exactly the -m line count, hashed with SHA-256 as read</div>
+  <div class="fact"><b>First sighting kept</b>Each later copy is reported as a pair against the first occurrence</div>
+  <div class="fact"><b>The report</b>-r names the report file, duplication_report.txt by default</div>
+  <div class="fact"><b>Whole components</b>Exclusions match whole path components, never substrings</div>
+</div>
+<section>
+  <h2>Usage</h2>
+  <pre>python3 main.py PATH [-m LINES] [-r REPORT] [-e NAME ...]</pre>
+  <p>The README never names the positional in its usage or parameter text; the first argument is the file or directory to search. Only .py files are read.</p>
+<table>
+    <tr><th>Option</th><th>What it does</th></tr>
+    <tr><td><code>path</code></td><td>The file or directory to search; never named in the README text.</td></tr>
+    <tr><td><code>-m LINES</code></td><td>The window size in lines, default 5. A window shorter than the file's remaining lines is never taken.</td></tr>
+    <tr><td><code>-r REPORT</code></td><td>Where the duplication report is written, duplication_report.txt by default.</td></tr>
+    <tr><td><code>-e NAME</code></td><td>Names to exclude. A name matches a whole path component only: excluding venv leaves myvenv in the search.</td></tr>
+  </table>
+</section>
+<section class="hold">
+  <h2>What counts as a copy</h2>
+  <ul>
+    <li>The hash is taken over the window exactly as written, whitespace and comments included. A second copy of the same code with different spacing or a changed comment never matches the first. That is the rule of the store, and it is deliberate.</li>
+    <li>Files that cannot be read are named in the log and the report, the line saying nothing was found is withheld, and the run exits 1 while still covering every file it could read.</li>
+  </ul>
+</section>
+<section>
+  <h2>Requirements</h2>
+  <p>Python's standard library only. The requirements.txt file is a comment stating exactly that.</p>
+</section>
+<footer>
+<p>The README of codeintel-code-duplication-detector closes with a licence line naming ShadowStrikeHQ, and its clone URL names the same stale org; the repository carries a separate LICENSE file headed MIT License. Both are preserved exactly as printed. Site type is set in Emblema One and Vazirmatn, self-hosted under the SIL Open Font License.</p>
+</footer>
+</div>
 </body>
 </html>
