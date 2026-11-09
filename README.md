@@ -1,3 +1,5 @@
+![Curved lead stereotype plates stored edge on in the timber racks of the plate store, the storekeeper's hand at a slot handle at the frame edge, a stack of newsprint and a caliper on the bench in the foreground](intro-banner.png)
+
 
 # codeintel-Code-Duplication-Detector
 
