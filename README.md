@@ -3,6 +3,8 @@
 
 Depth marker treatment: every heading is a marker tied on a sounding line, in Barriecito in dark blue on pale turquoise, ruled below.
 
+![The smooth unworked backs of two curved lead stereotype plates standing side by side in a dark timber rack slot, plain brushed lead with no raised face showing, the heading plate](logo.png)
+
 ![A stereotype plate store with curved lead printing plates racked edge on in timber slots, the storekeeper comparing a plate in his hands with its twin standing on the bench, a blue pencil resting beside a stack of newsprint](banner.png)
 
 ![Water in three depths: light shafts thin at long intervals, the scattering layer rises slowly as a band, and two lanternfish hold station with one drifting toward the other and settling](scene.svg)

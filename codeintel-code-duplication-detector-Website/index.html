@@ -16,6 +16,7 @@
 body { margin: 0; background: var(--cream); color: var(--ink); font-family: "Vazirmatn", sans-serif; line-height: 1.55; }
 .wrap { max-width: 960px; margin: 0 auto; padding: 0 20px 64px; }
 header.hero { text-align: center; padding: 52px 0 8px; }
+img.hero-logo { width: min(430px, 82vw); border-radius: 10px; box-shadow: 0 10px 34px rgba(30,30,36,.22); }
 h1, h2 { font-family: "Emblema One", sans-serif; line-height: 1.18; font-weight: 400; }
 h1 { font-size: clamp(25px, 4.6vw, 40px); margin: 10px 0 6px; }
 .tagline { color: var(--soft); font-size: 19px; margin: 0 auto; max-width: 700px; }
@@ -44,6 +45,7 @@ footer { margin-top: 52px; border-top: 2px solid var(--line); padding-top: 16px;
 <body>
 <div class="wrap">
 <header class="hero">
+  <img class="hero-logo" src="assets/logo.png" alt="The smooth unworked backs of two curved lead stereotype plates standing side by side in a dark timber rack slot, plain brushed lead with no raised face showing">
   <h1>codeintel-code-duplication-detector</h1>
   <p class="tagline">The Plate Store. A command line detector that hashes every window of lines in a Python codebase exactly as written and reports each later copy against the first plate it matches.</p>
   <div class="btns">
@@ -51,11 +53,6 @@ footer { margin-top: 52px; border-top: 2px solid var(--line); padding-top: 16px;
     <a class="btn" href="https://github.com/ShadowGuard-AI/codeintel-code-duplication-detector/blob/main/main.py">main.py</a>
   </div>
 </header>
-<figure>
-  <img src="assets/banner.png" alt="A stereotype plate store with curved lead printing plates racked edge on in timber slots, the storekeeper comparing a plate in his hands with its twin standing on the bench, a blue pencil resting beside a stack of newsprint">
-  <figcaption>The plate store: every copy is matched against the first of its kind.</figcaption>
-</figure>
-
 <div class="facts">
   <div class="fact"><b>Exact windows</b>Windows of exactly the -m line count, hashed with SHA-256 as read</div>
   <div class="fact"><b>First sighting kept</b>Each later copy is reported as a pair against the first occurrence</div>
@@ -74,6 +71,11 @@ footer { margin-top: 52px; border-top: 2px solid var(--line); padding-top: 16px;
     <tr><td><code>-e NAME</code></td><td>Names to exclude. A name matches a whole path component only: excluding venv leaves myvenv in the search.</td></tr>
   </table>
 </section>
+<figure>
+  <img src="assets/banner.png" alt="A stereotype plate store with curved lead printing plates racked edge on in timber slots, the storekeeper comparing a plate in his hands with its twin standing on the bench, a blue pencil resting beside a stack of newsprint">
+  <figcaption>The plate store: every copy is matched against the first of its kind.</figcaption>
+</figure>
+
 <section class="hold">
   <h2>What counts as a copy</h2>
   <ul>
